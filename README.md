@@ -17,6 +17,8 @@ Marvin provides some microservice endpoints. Just start Marvin by launching 🚀
 This should be enough for the most experiments. 
 As you clone Marvin to scale in some cluster environments, he will pick up a random number between 1 and 1000 as ID, and place it in his answers. So you have a change to see which instance answers.
 
-You read it to the end, so it was not DL;DR and you may find Marvin useful. Just let Marvin an me know on GitHub if he was usefull or if you miss something. 
+You read it till the end, so it was not just DL;DR and you may find Marvin useful. Let Marvin and me know on GitHub if he was useful or if you miss something. 
 
 Have fun!
+
+Stefan & Marvin ;-)
