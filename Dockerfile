@@ -6,7 +6,8 @@ FROM amazoncorretto:11.0.8
 COPY assets/ /
 
 # nobody (99)
-RUN chown -R 99:99 /opt
+RUN chown -R 99:99 /opt ; \
+    chmod 644 /opt/marvin-bot-1.0-SNAPSHOT.jar
 
 # http port
 EXPOSE 8042
