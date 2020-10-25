@@ -51,7 +51,9 @@ public class CommandController {
                 break;
         }
 
+
         // Just received a ping request - NOP
+        returnMessage = "Marvin-"+ContainerState.botID+": "+returnMessage;
         return new ResponseEntity<>(returnMessage, HttpStatus.OK);
     }
 

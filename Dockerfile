@@ -13,6 +13,11 @@ RUN chown -R 99:99 /opt ; \
 EXPOSE 8042
 # hazelcast communication
 EXPOSE 5701
+EXPOSE 5702
+EXPOSE 5703
+EXPOSE 5704
+EXPOSE 5705
+
 
 # Run as Nobody
 USER nobody

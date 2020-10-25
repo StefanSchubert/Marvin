@@ -10,6 +10,8 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.ApplicationScope;
 
+import java.util.Random;
+
 /**
  * Used to store the modus operandi of the container.
  *
@@ -21,9 +23,20 @@ import org.springframework.web.context.annotation.ApplicationScope;
 @Setter
 public class ContainerState {
 
+    public static Integer botID;
+
     MarvinsMood marvinsMood = MarvinsMood.feel_good;
 
     Long accessed = 0l;
+
+    static {
+        // create random object
+        Random ran = new Random();
+
+        // generating integer between 0 and 10000
+        botID = ran.nextInt(1000);
+    }
+
 
     public void incAccessCounter(){
         accessed++;

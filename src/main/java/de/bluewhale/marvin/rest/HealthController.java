@@ -67,6 +67,7 @@ public class HealthController {
         }
 
         // Just received a ping request - NOP
+        returnText = "Marvin-"+ContainerState.botID+": "+returnText;
         return new ResponseEntity<>(returnText, returnStatus);
     }
 

@@ -45,14 +45,14 @@ public class HazelcastConfig {
 
         // Cluster Communication via TCP
         NetworkConfig network = config.getNetworkConfig();
-        network.setPort(5701).setPortCount(10); // Reserving a portrange of 10 for the backend nodes.
+        network.setPort(5701).setPortCount(5); // Reserving a portrange of 5 for the backend nodes.
         network.setPortAutoIncrement(true);
 
         // Who is allowed to Join and disable multicast (as it is often blocked)
         JoinConfig join = network.getJoin();
         join.getMulticastConfig().setEnabled(false);
         join.getTcpIpConfig()
-                // todo: how can this be leveraged to add noded distrubuted in a cluster env.
+                // todo: how can this be leveraged to add nodes distributed in a cluster env.
                 // .addMember("sabiBE1") // add your backend machines here (can be an IP address too).
                 .addMember("localhost").setEnabled(true);
 

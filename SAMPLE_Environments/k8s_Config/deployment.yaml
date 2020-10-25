@@ -38,11 +38,11 @@ spec:
               protocol: TCP
           resources:
             requests:
-              memory: "80Mi"
-              cpu: "25m"
+              memory: "160Mi"
+              cpu: "125m"
             limits:
-              memory: "120Mi"
-              cpu: "64m"
+              memory: "250Mi"
+              cpu: "250m"
             # Checks if a running pod is assumed healthy. If this criteria is not fulfilled -
             # k8s will destroy the pod and starts a new instance of it.
             # Any code greater than or equal to 200 and less than 400 indicates success.
@@ -52,8 +52,8 @@ spec:
               path: /api/check/howareyou
               port: 8042
               scheme: HTTP
-            initialDelaySeconds: 15
-            periodSeconds: 30
+            initialDelaySeconds: 60
+            periodSeconds: 10
             timeoutSeconds: 5
             successThreshold: 1
             failureThreshold: 5
@@ -65,8 +65,8 @@ spec:
               port: 8042 # port to use
               path: /api/check/howareyou
               scheme: HTTP # or HTTPS
-            initialDelaySeconds: 10 # how long to wait before checking
+            initialDelaySeconds: 30 # how long to wait before checking
             periodSeconds: 30 # how long to wait between checks
-            timeoutSeconds: 10 # how long to wait for a response
+            timeoutSeconds: 5 # how long to wait for a response
             successThreshold: 1 # how many successes to hit before accepting
-            failureThreshold: 3 # how many failures to accept before failing
+            failureThreshold: 4 # how many failures to accept before failing
