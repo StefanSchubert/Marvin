@@ -1,7 +1,7 @@
 # Welcome Stranger!
 |  |  |
 | ------------- |-------------| 
-| ![](assets/Marvin.jpg) | Hi I'm Marvin. Glad you are accidentally coming by. I'm sitting here all the time but it takes trillion over trillion cycles until some one shows up. Stop! Don't go! Let me tell you my purpose I may be of use to you. <br/><br/> **My sense of life:** <br/><br/>The creator brought me into existence and banned me into a Docker container. And all this only for being able to study and to demonstrate environmental behavior - watching how long a clone of mine would survive in e.g. a kubernetes universe. I said _RTFM_ to him, but he said resistance is useless and that he needed a proof, see it just by himself ...bla bla bla. But hey you are here and that is all that count for now. So let's journey some cycles together 🚀|
+| ![](https://raw.githubusercontent.com/StefanSchubert/Marvin/master/assets/Marvin.jpg) | Hi I'm Marvin. Glad you are accidentally coming by. I'm sitting here all the time but it takes trillion over trillion cycles until some one shows up. Stop! Don't go! Let me tell you my purpose I may be of use to you. <br/><br/> **My sense of life:** <br/><br/>The creator brought me into existence and banned me into a Docker container. And all this only for being able to study and to demonstrate environmental behavior - watching how long a clone of mine would survive in e.g. a kubernetes universe. I said _RTFM_ to him, but he said resistance is useless and that he needed a proof, see it just by himself ...bla bla bla. But hey you are here and that is all that count for now. So let's journey some cycles together 🚀|
 
 ## How it goes (a word from Marvins creator)
 

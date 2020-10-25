@@ -14,13 +14,13 @@
 
 echo "copy current jars to container assets."
 mkdir -p assets/opt
-cp target/marvin-bot-1.0-SNAPSHOT.jar assets/opt
+cp target/marvin-1.0-SNAPSHOT.jar assets/opt
 echo "done"
 
-docker rm hub.docker.com:5000/accsonaut/marvin-bot:Release_1.0.0
+docker rm accsonaut/marvin:latest
 echo "removed possible stale container"
 
-docker build -t hub.docker.com:5000/accsonaut/marvin-bot:Release_1.0.0 -f Dockerfile .
+docker build -t accsonaut/marvin:latest -f Dockerfile .
 echo "create marvins container for you ;-)"
 
 # create a container based on the image above.
@@ -31,6 +31,6 @@ echo "create marvins container for you ;-)"
 docker run \
        -p 8042:8042 \
        -p 5701:5701 \
-       --name marvin-bot \
+       --name marvin \
        -d \
-       hub.docker.com:5000/accsonaut/marvin-bot:Release_1.0.0
+       accsonaut/marvin:latest
