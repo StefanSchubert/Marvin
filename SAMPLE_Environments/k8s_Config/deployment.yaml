@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marvin-deployment
+  labels:
+    app: marvin-pod
+  namespace: k8s-training
+spec:
+  selector:
+    matchLabels:
+      app: marvin-pod
+  replicas: 2
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: marvin-pod
+      namespace: k8s-training
+      labels:
+        app: marvin-pod
+    spec:
+      hostname: marvin4u
+      imagePullSecrets:
+        - name: docker-registry
+      containers:
+        - name: marvin-container
+          image: accsonaut/marvin:latest
+          imagePullPolicy: Always
+          securityContext:
+            runAsUser: 99
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 8042
+              name: http
+              protocol: TCP
+            - containerPort: 5701
+              name: hazelcast
+              protocol: TCP
+          resources:
+            requests:
+              memory: "80Mi"
+              cpu: "25m"
+            limits:
+              memory: "120Mi"
+              cpu: "64m"
+            # Checks if a running pod is assumed healthy. If this criteria is not fulfilled -
+            # k8s will destroy the pod and starts a new instance of it.
+            # Any code greater than or equal to 200 and less than 400 indicates success.
+            # Any other code indicates failure.
+          livenessProbe:
+            httpGet:
+              path: /api/check/howareyou
+              port: 8042
+              scheme: HTTP
+            initialDelaySeconds: 15
+            periodSeconds: 30
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 5
+          # Specify from when the POD is ready to accept incoming traffic, meaning the moment, when the
+          # underlying service or application has been fully initialized.
+          # k8s will continue to do the readiness check.
+          readinessProbe:
+            httpGet: # make an HTTP request
+              port: 8042 # port to use
+              path: /api/check/howareyou
+              scheme: HTTP # or HTTPS
+            initialDelaySeconds: 10 # how long to wait before checking
+            periodSeconds: 30 # how long to wait between checks
+            timeoutSeconds: 10 # how long to wait for a response
+            successThreshold: 1 # how many successes to hit before accepting
+            failureThreshold: 3 # how many failures to accept before failing

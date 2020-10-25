@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: marvin-service
+  name: marvin-service
+  namespace: k8s-training
+spec:
+  type: ClusterIP
+  sessionAffinity: ClientIP
+  ports:
+    - port: 8042
+      name: http
+    - port: 5701
+      name: hazelcast
+  selector:
+    app: marvin-pod

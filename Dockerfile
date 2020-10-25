@@ -5,10 +5,16 @@ FROM amazoncorretto:11.0.8
 # copyjars.sh will do it for you
 COPY assets/ /
 
+# nobody (99)
+RUN chown -R 99:99 /opt
+
 # http port
 EXPOSE 8042
 # hazelcast communication
 EXPOSE 5701
+
+# Run as Nobody
+USER nobody
 
 WORKDIR /opt
 ENTRYPOINT ["/bin/java", "-jar", "/opt/marvin-bot-1.0-SNAPSHOT.jar"]
