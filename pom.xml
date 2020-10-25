@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020 by Stefan Schubert under the MIT License (MIT).
+  ~ See project LICENSE file for the detailed terms and conditions.
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -100,6 +105,18 @@
 
     <build>
         <finalName>marvin-bot-${project.version}</finalName>
+
+        <resources>
+            <!--
+            See https://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
+            about using maven project properties in application.properties.
+            -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
