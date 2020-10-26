@@ -1,8 +1,8 @@
 # Base container with amazon corretto
 FROM amazoncorretto:11.0.9
 
-# Copy sabis executable jar. You need to replace the jar from the assets dir after a new build
-# copyjars.sh will do it for you
+# Copy executable jar. You need to replace the jar from the assets dir after a new build
+# buildAndLaunchConatiner.sh will do it for you
 COPY assets/ /
 
 # nobody (99)

@@ -12,7 +12,7 @@ Marvin provides some microservice endpoints. Just start Marvin by launching 🚀
 | HTTP-Get Endpoints | Description  |
 | ------------- |-------------| 
 | /api/check/howareyou |Marvin answers via http body and status code, so you can integrate this as a container healthcheck for your environment. <br/><br/> **http-200** - I'm happy that you ask, I'm feeling well.<br/> **http-429** - I'm so depressed because after hearing this protocol again and again, you will want to replace me. |
-|/api/cmd/initiateProtocol/&lt;x&gt;|**x=88** - just be happy and work with no complaints <br/> **x=100** - be unhappy, claim to work to much <br/> **x=9** - play death don't answer anymore on healthchecks. <br/> **x=-1** - dissolve Marvin! (i.e. corresponding instance will stop to exists)|  
+|/api/cmd/initiateProtocol/&lt;x&gt;|**x=88** - just be happy and work with no complaints <br/> **x=100** - be unhappy, claim to work to much <br/> **x=9** - play death don't answer anymore on healthchecks. <br/> **x=-1** - dissolve Marvin! (i.e. corresponding instance will stop to exists) <br/> **x=53** - Show your IP Address.|  
 
 This should be enough for the most experiments. 
 As you clone Marvin to scale in some cluster environments, he will pick up a random number between 1 and 1000 as ID, and place it in his answers. So you have a change to see which instance answers.
