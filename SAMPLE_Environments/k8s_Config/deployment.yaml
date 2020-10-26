@@ -35,7 +35,6 @@ spec:
               protocol: TCP
             - containerPort: 5701
               name: hazelcast
-              protocol: TCP
           resources:
             requests:
               memory: "160Mi"

@@ -11,7 +11,5 @@ spec:
   ports:
     - port: 8042
       name: http
-    - port: 5701
-      name: hazelcast
   selector:
     app: marvin-pod
