@@ -1,5 +1,5 @@
 # Base container with amazon corretto
-FROM amazoncorretto:11.0.8
+FROM amazoncorretto:11.0.9
 
 # Copy sabis executable jar. You need to replace the jar from the assets dir after a new build
 # copyjars.sh will do it for you
@@ -13,11 +13,6 @@ RUN chown -R 99:99 /opt ; \
 EXPOSE 8042
 # hazelcast communication
 EXPOSE 5701
-EXPOSE 5702
-EXPOSE 5703
-EXPOSE 5704
-EXPOSE 5705
-
 
 # Run as Nobody
 USER nobody

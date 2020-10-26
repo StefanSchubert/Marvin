@@ -14,6 +14,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import static java.lang.System.exit;
 
 @RestController
@@ -49,11 +52,26 @@ public class CommandController {
                 log.info("Received kill command. Bye bye");
                 exit(1);
                 break;
+            case 53:
+                log.info("Determining Hosts IP-Address...");
+                StringBuffer sb = new StringBuffer();
+                InetAddress inetAddress = null;
+                try {
+                    inetAddress = InetAddress.getLocalHost();
+                    sb.append("IP Address:- " + inetAddress.getHostAddress());
+                    sb.append("\n");
+                    sb.append("Host Name:- " + inetAddress.getHostName());
+                } catch (UnknownHostException e) {
+                    sb.append("Could not InetAddress.getLocalHost() !?");
+                }
+                returnMessage = sb.toString();
+                log.info(returnMessage);
+                break;
         }
 
 
         // Just received a ping request - NOP
-        returnMessage = "Marvin-"+ContainerState.botID+": "+returnMessage;
+        returnMessage = "Marvin-" + ContainerState.botID + ": " + returnMessage;
         return new ResponseEntity<>(returnMessage, HttpStatus.OK);
     }
 

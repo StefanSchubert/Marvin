@@ -9,6 +9,9 @@ import com.hazelcast.config.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 /**
  * <p>A hazelcastInstance will be only created, if the libs are on the classpath (see maven dependencies) and
  * if a configuration will be found. So this configuration here triggers the cache creation at bootstrapping
@@ -45,16 +48,23 @@ public class HazelcastConfig {
 
         // Cluster Communication via TCP
         NetworkConfig network = config.getNetworkConfig();
-        network.setPort(5701).setPortCount(5); // Reserving a portrange of 5 for the backend nodes.
-        network.setPortAutoIncrement(true);
+        network.setPort(5701).setPortCount(1); // Reserving a portrange of 5 for the backend nodes.
+
+        // What is my IP?
+        InetAddress inetAddress = null;
+        String containerIP;
+        try {
+            inetAddress = InetAddress.getLocalHost();
+            containerIP = inetAddress.getHostAddress();
+        } catch (UnknownHostException e) {
+            containerIP = "localhost";
+        }
 
         // Who is allowed to Join and disable multicast (as it is often blocked)
         JoinConfig join = network.getJoin();
         join.getMulticastConfig().setEnabled(false);
         join.getTcpIpConfig()
-                // todo: how can this be leveraged to add nodes distributed in a cluster env.
-                // .addMember("sabiBE1") // add your backend machines here (can be an IP address too).
-                .addMember("localhost").setEnabled(true);
+                .addMember(containerIP).setEnabled(true);
 
         return config;
     }
