@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 by Stefan Schubert under the MIT License (MIT).
+ * Copyright (c) 2022 by Stefan Schubert under the MIT License (MIT).
  * See project LICENSE file for the detailed terms and conditions.
  */
 
@@ -43,8 +43,7 @@ public class HazelcastConfig {
                 .addMapConfig(
                         new MapConfig()
                                 .setName("BotID")
-                                .setMaxSizeConfig(new MaxSizeConfig(200, MaxSizeConfig.MaxSizePolicy.FREE_HEAP_SIZE))
-                                .setEvictionPolicy(EvictionPolicy.LRU));
+                                .setEvictionConfig(new EvictionConfig().setEvictionPolicy(EvictionPolicy.LRU)));
 
         // Cluster Communication via TCP
         NetworkConfig network = config.getNetworkConfig();
