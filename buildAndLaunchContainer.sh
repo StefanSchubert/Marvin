@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #
-# Copyright (c) 2020 by Stefan Schubert under the MIT License (MIT).
+# Copyright (c) 2023 by Stefan Schubert under the MIT License (MIT).
 # See project LICENSE file for the detailed terms and conditions.
 #
 
@@ -14,7 +14,7 @@
 
 echo "copy current jars to container assets."
 mkdir -p assets/opt
-cp target/marvin-bot-1.0-SNAPSHOT.jar assets/opt
+cp target/marvin-bot-1.1-SNAPSHOT.jar assets/opt
 echo "done"
 
 docker rm accsonaut/marvin:latest
