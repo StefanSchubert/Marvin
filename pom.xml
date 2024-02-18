@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2023 by Stefan Schubert under the MIT License (MIT).
+  ~ Copyright (c) 2024 by Stefan Schubert under the MIT License (MIT).
   ~ See project LICENSE file for the detailed terms and conditions.
   -->
 
@@ -13,7 +13,7 @@
         <!-- Taking care to have all spring dependencies right. -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.5</version>
+        <version>3.2.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -50,7 +50,7 @@
         <java.version>21</java.version>
         <log4j2.version>2.20.0</log4j2.version>
         <lombok.version>1.18.30</lombok.version>
-        <owasp.plugin.version>9.0.1</owasp.plugin.version>
+        <owasp.plugin.version>9.0.9</owasp.plugin.version>
         <maven.versions.plugin.version>2.16.2</maven.versions.plugin.version>
     </properties>
 
