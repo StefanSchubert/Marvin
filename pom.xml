@@ -13,13 +13,13 @@
         <!-- Taking care to have all spring dependencies right. -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>3.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>de.bluewhale</groupId>
     <artifactId>Marvin</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <packaging>jar</packaging>
     <description>
@@ -47,13 +47,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>21</java.version>
-        <log4j2.version>2.20.0</log4j2.version>
-        <lombok.version>1.18.30</lombok.version>
-        <owasp.plugin.version>9.0.9</owasp.plugin.version>
-        <maven.versions.plugin.version>2.16.2</maven.versions.plugin.version>
-        <classmate.version>1.7.0</classmate.version>
-        <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
+        <java.version>25</java.version>
+        <lombok.version>1.18.42</lombok.version>
+        <owasp.plugin.version>12.1.6</owasp.plugin.version>
+        <maven.versions.plugin.version>2.19.1</maven.versions.plugin.version>
+        <classmate.version>1.7.1</classmate.version>
     </properties>
 
     <dependencyManagement>
